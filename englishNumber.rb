@@ -120,4 +120,8 @@ def englishNumber number
   numString
 end
 
-puts englishNumber(gets.chomp.to_i)
+englishNumber 9000
+
+while englishNumber > 1
+  puts englishNumber
+end
