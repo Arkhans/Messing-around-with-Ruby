@@ -2,10 +2,9 @@ class Dragon
 
   def initialize name
     @name = name
-    @asleep = false
+    @asleep = false   
     @stuffInBelly     = 10  # He's full.
     @stuffInIntestine =  0  # He doesn't need to go.
-
     puts @name + ' is born.'
   end
 
@@ -83,6 +82,7 @@ class Dragon
         puts 'He wakes up suddenly!'
       end
       puts @name + ' is starving!  In desperation, he ate YOU!'
+      @dead = true
       exit  # This quits the program.
     end
 
@@ -109,3 +109,34 @@ class Dragon
   end
 
 end
+
+puts 'You watch as your dragon egg begins to crack...A few moments later a baby dragon yelps, you can almost hear it saying: "Mum?"'
+puts 'You will have to take good care of your baby dragon, you will have to feed him, pet him and put him to sleep. Be careful becase they have been known to act up...'
+puts 'But first, let\'s give your baby dragon a name!'
+puts 'What would you like to name your baby dragon?'
+pet = Dragon.new gets.chomp
+puts 'Congratulations on succeeding on your firt step to responsible parenthood!' 
+puts 'Now try to "feed", "toss", "walk" and "rock" your new dragon to sleep. Or you could just "exit" the cave if you want a break.'
+puts 'Be especially careful with feeding him regularly!'
+
+input = ''
+while input != "exit"
+  
+  input = gets.chomp.downcase
+
+  if input == "feed"
+    pet.feed
+  elsif input == "walk"
+    pet.walk
+  elsif input == "rock"
+    pet.rock
+  elsif input == "toss"
+    pet.toss
+  else 
+    puts "Sorry you can't do that to your baby dragon!"
+  end
+
+end
+
+    
+
